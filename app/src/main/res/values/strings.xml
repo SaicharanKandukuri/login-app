@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Task01</string>
+    <string name="textview">TextView</string>
+    <string name="button">Button</string>
+    <string name="name">Name</string>
+    <string name="Username" />
+    <string name="username_display">Username :</string>
+    <string name="password_display">Password :</string>
+    <string name="VerifyPassword_dispaly">Verify Password: </string>
+    <string name="Email_display">Email :</string>
+    <string name="pmsg">Password of length - </string>
+</resources>
