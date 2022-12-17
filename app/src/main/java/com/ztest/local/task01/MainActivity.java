@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText[] test = new EditText[4];
     EditText normal;
-    Button b1;
+    Button[] b1 = new Button[3];
     RadioGroup r1;
     CheckBox agreement;
 
@@ -34,13 +34,34 @@ public class MainActivity extends AppCompatActivity {
         test[2] = findViewById(R.id.editTextTextPassword2);
         test[3] = findViewById(R.id.UsernamePrompt);
         r1      = findViewById(R.id.radio_group1);
-        b1      = findViewById(R.id.SubmitButton);
+        b1[0]   = findViewById(R.id.SubmitButton);
+        b1[1]   = findViewById(R.id.ResetButton);
+        b1[2]   = findViewById(R.id.ExitAppButton);
         agreement = findViewById(R.id.checkBox);
 
         Intent result = new Intent(MainActivity.this, result.class);
         Bundle bridge = new Bundle();
 
-        b1.setOnClickListener(
+        b1[1].setOnClickListener(
+                view -> {
+                    // cleanup all the input feilds
+                    test[0].setText("");
+                    test[1].setText("");
+                    test[2].setText("");
+                    test[3].setText("");
+                    // uncheck radio group
+                    r1.clearCheck();
+                    // set agreement to false
+                    agreement.setChecked(false);
+                }
+        );
+
+        b1[2].setOnClickListener(
+                // finish the MainActivity
+                view -> finish()
+        );
+
+        b1[0].setOnClickListener(
                 view -> {
                     if (
                             helpers.isVaildUserName(test[3])
