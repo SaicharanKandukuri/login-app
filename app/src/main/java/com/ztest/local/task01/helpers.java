@@ -11,7 +11,7 @@ public class helpers {
         String text = data.getText().toString().trim();
 
         if (text.isEmpty()) {
-            data.setError("UserName cannot be empty");
+            data.setError("Username cannot be empty");
             return false;
         }
 
